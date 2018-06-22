@@ -1,0 +1,2 @@
+create table rawData(Load_Port TEXT,Eqp_Type_Abrv_in_Shipment TEXT,ETD TEXT,Dsch_Port TEXT,ETA_Dsch_Port TEXT,Final_Dest TEXT,ETA_Final_Dest TEXT,Msr_Per_Eqp REAL,Unit_of_Measure_Msr TEXT,Wgt_Per_Eqp REAL,Unit_of_Measure_Wgt TEXT,PO_No REAL,Item_Class TEXT,Shipped_Qty REAL,PkgCode_Shipped TEXT,Shipped_Dtl_Qty INT,PkgCode_Shipped_Dtl TEXT,Item_Shipped_Wgt REAL,Unit_of_Measure_Shipped_Wgt TEXT,Item_Shipped_Msr REAL,Unit_of_Measure2_Shipped_Msr TEXT);
+
