@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1529767434056.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "7658A1",
+    "lastKnownWriteTime" : 3346849036566623844,
+    "last_content_update" : 1529767434056,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "FD2E588F",
+        "caption" : "live.dt",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=live.dt&cache_key=FD2E588F",
+        "displayedObservations" : 699,
+        "environment" : "",
+        "object" : "live.dt",
+        "preview" : 0,
+        "totalObservations" : 699,
+        "variables" : 41
+    },
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

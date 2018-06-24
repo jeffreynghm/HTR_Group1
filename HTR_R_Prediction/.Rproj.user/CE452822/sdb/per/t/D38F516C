@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "options(scipen = 999)\n\n\"%ni%\" = Negate( \"%in%\" )\ny_predicted<-ifelse(y_predicted<0,0,y_predicted)\npredict.dt<-as.vector(append(y_predicted[-which(y_predicted<60)]-60,y_predicted[which(y_predicted<60)]))\npool.dt<-append(predict.dt,c(47.38,23.42,35,32.23,32.55))\n\npool<-length(pool.dt)\ncontainer40<-length(which(y_predicted>60))\ncontainer20<-0\n\nstop<-0\nwhile(pool>1){\n  ##consolidate 40ft container\n  local.max<-0\n  temp.pool<-c()\n  pool<-length(pool.dt)\n  for(j in 1:pool){\n    pool<-length(pool.dt)\n    for(i in 1:pool){\n      pool<-length(pool.dt)\n       if(((pool.dt[i]+pool.dt[j])<=60)&((pool.dt[i]+pool.dt[j])>28) & (pool.dt[i]+pool.dt[j])>local.max & pool.dt[i]!=pool.dt[j]){\n      temp.pool<-c(pool.dt[i],pool.dt[j])\n        message(paste(temp.pool,collapse=\",\"))\n       \n         local.max<-pool.dt[i]+pool.dt[j]\n         message(local.max)\n       }\n       \n    }\n    \n  }\n  if(local.max>0){container40<-container40+1\n  pool<-pool-2\n  pool.dt<-pool.dt[ pool.dt %ni% temp.pool ]\n  }\n  else{\n    stop<-stop+1\n  }\n  message(\"pool:\")\n  #pool.dt<-pool.dttemp.dt\n  message(pool.dt)\n  \n  \n  \n  \n  if(stop>pool){pool<-0}\n}\ncontainer40\n\n\n\n\npool<-length(pool.dt)\ncontainer20<-length(which(pool.dt>28))\npool.dt<-append(pool.dt[-which(pool.dt<28)]-28,pool.dt[which(pool.dt<28)])\nstop<-0\npool<-length(pool.dt)\npool\nstop<-0\nwhile(pool>1){\n  ##consolidate 40ft container\n  local.max<-0\n  temp.pool<-c()\n  pool<-length(pool.dt)\n  for(j in 1:pool){\n    pool<-length(pool.dt)\n    for(i in 1:pool){\n      pool<-length(pool.dt)\n      if(((pool.dt[i]+pool.dt[j])<=28)&((pool.dt[i]+pool.dt[j])>0) & (pool.dt[i]+pool.dt[j])>local.max & pool.dt[i]!=pool.dt[j]){\n        temp.pool<-c(pool.dt[i],pool.dt[j])\n        message(paste(temp.pool,collapse=\",\"))\n        \n        local.max<-pool.dt[i]+pool.dt[j]\n        message(local.max)\n      }\n      \n    }\n    \n  }\n  if(local.max>0){container20<-container20+1\n  pool<-pool-2\n  pool.dt<-pool.dt[ pool.dt %ni% temp.pool ]\n  }\n  else{\n    stop<-stop+1\n  }\n  message(\"pool:\")\n  #pool.dt<-pool.dttemp.dt\n  message(pool.dt)\n  \n  \n  \n  \n  if(stop>pool){pool<-0}\n}\ncontainer20\n\n\n\n\ncombn(pool.dt,2,function(x){stop<-1\nwhile(stop<0){\n  if(sum(x)<28&combn(pool.dt,2,sum)){}\n  stop<-stop+1\nif(stop>length(x)){stop<-0}\n  \n  \n  }})\n  \npool.dt\n\n  \n})",
+    "created" : 1529761794820.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "861359276",
+    "id" : "D38F516C",
+    "lastKnownWriteTime" : 1529808471,
+    "last_content_update" : 1529808471634,
+    "path" : "~/HTR_R_Prediction/src/container_opt.R",
+    "project_path" : "src/container_opt.R",
+    "properties" : {
+        "source_window_id" : "",
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

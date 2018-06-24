@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#establish connection to Oracle DB\nlibrary(ROracle)\ndrv <- dbDriver(\"Oracle\")\nhost <- \"hk11-scan.aswatson.net\"\nport <- 1576\nsvc <- \"ANPRDCAB\"\n\nconnect.string <- paste(\n  \"(DESCRIPTION=\",\n  \"(ADDRESS=(PROTOCOL=tcp)(HOST=\", host, \")(PORT=\", port, \"))\",\n  \"(CONNECT_DATA=(SERVICE_NAME=\", svc, \")))\", sep = \"\")\n\n#username and password\ncon <- dbConnect(drv, username = \"GCRMYX\", password = \"GCRMYX_1227\",\n                 dbname = connect.string, encoding = \"\")\n\n\n\n\ndbDisconnect(con)\n",
+    "created" : 1529734665936.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2654915802",
+    "id" : "91E709FF",
+    "lastKnownWriteTime" : 1516822144,
+    "last_content_update" : 1516822144,
+    "path" : "C:/Users/Larry/Desktop/price_el/src/orcale demo.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

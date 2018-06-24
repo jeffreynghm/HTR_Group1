@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "# function to write to a sqlite database\nSQLtWrite <- function(DT_write,\n                      str.table.name, \n                      DBName, \n                      overwrite = FALSE, \n                      append = TRUE){\n  #Connection to the db\n  conn <- SQLtCon(DBName)  \n  \n  dbWriteTable(conn, str.table.name, DT_write, overwrite = overwrite, append = append)\n  message(sprintf(\"Saved to table %s for database %s.\", str.table.name, DBName))\n  \n  #disconnect\n  dbDisconnect(conn)\n}\n\n# Connection to SQLite\nSQLtCon <- function(DBName){\n  return(dbConnect(RSQLite::SQLite(), dbname =DBName))\n}\n\n\nSQLtQuery <- function(DBName, str.query){\n  conn <- SQLtCon(DBName)\n  \n  # Converting to data.table\n  results <- data.table(dbGetQuery(conn, str.query))\n  message(sprintf(\"Queried from DB %s\", DBName))\n  \n  # Disconnecting every time \n  dbDisconnect(conn)\n  return(results)\n}\n\nSQLtAllTables <- function(DBName){\n  # get a list of all tables\n  conn <- SQLtCon(DBName)\n  alltables <-dbListTables(conn)\n  dbDisconnect(conn)\n  return(alltables)  \n}\n\n\n",
+    "created" : 1529734737969.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "1753477747",
+    "id" : "CC5A1D4D",
+    "lastKnownWriteTime" : 8389754659302220320,
+    "last_content_update" : 1529734739991,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
